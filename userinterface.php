@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | COMP 1006</title>
+
 </head>
 <!--user interface input the full name, email and favorite colour-->
 

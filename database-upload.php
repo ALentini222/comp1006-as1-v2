@@ -4,7 +4,15 @@
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | COMP 1006</title>
 <!--basic layout-->
-    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+<style>
+    table, td {
+        border: 1px solid black;
+    }
+
+    table {
+        width: 100%;
+    }
+</style>
 </head>
 <body>
 <?php
