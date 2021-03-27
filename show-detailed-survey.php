@@ -13,6 +13,9 @@
         width: 100%;
     }
 </style>
+    <?php
+    include 'global-nav.php';
+    ?>
 </head>
 <body>
 <?php

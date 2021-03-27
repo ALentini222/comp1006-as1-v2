@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | COMP 1006</title>
-
+    <?php
+    include 'global-nav.php';
+    ?>
 </head>
 <!--user interface input the full name, email and favorite colour-->
 
 <body>
 <h2>Basic Information Survey</h2>
-<form action="database-upload.php" method="post">
+<form action="show-detailed-survey.php" method="post">
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname"><br>
     <label for="lastname">Last name:</label><br>
