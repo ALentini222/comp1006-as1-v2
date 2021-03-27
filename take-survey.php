@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Assignment 1 V2 | COMP 1006</title>
+    <title>Assignment 1 V2 | Take Survey</title>
+</head>
+<body>
+<header>
     <?php
     include 'global-nav.php';
     ?>
-</head>
-<!--user interface input the full name, email and favorite colour-->
-
-<body>
+</header>
+<main>
 <h2>Basic Information Survey</h2>
-<form action="show-detailed-survey.php" method="post">
+<form action="upload.php" method="post">
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname"><br>
     <label for="lastname">Last name:</label><br>
@@ -35,5 +36,9 @@
     </select><br><br>
     <input type="submit" value="Submit">
 </form>
+</main>
+<?php
+include 'footer-nav.php';
+?>
 </body>
 </html>
