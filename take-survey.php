@@ -7,7 +7,7 @@
 <body>
 <header>
     <?php
-    include 'global-nav.php';
+    include 'logged-in-nav.php';
     ?>
 </header>
 <main>

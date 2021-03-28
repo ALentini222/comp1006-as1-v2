@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment 1 V2 | Validate</title>
+</head>
+<body>
 <?php
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -18,20 +25,23 @@ $cmd->bindParam(':username', $username, PDO::PARAM_STR, 100);
 $cmd->execute();
 $user = $cmd->fetch();
 
-if (!$user) {
-    $db = null;
-    header('location:login.php?invalid=true');
-}
-else {
-    if (password_verify($password, $user['password'])) {
-        session_start();
-        $_SESSION['username'] = $username;
-        $db = null;
-        header('location:take-survey.php');
-    }
-    else {
+    if (!$user) {
         $db = null;
         header('location:login.php?invalid=true');
     }
-}
+    else {
+        if (password_verify($password, $user['password'])) {
+            session_start();
+
+            $_SESSION['username'] = $username;
+
+            $db = null;
+            header('location:logged-in-home.php');
+        }
+        else {
+            $db = null;
+
+            header('location:login.php?invalid=true');
+        }
+    }
 ?>

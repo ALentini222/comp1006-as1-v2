@@ -1,3 +1,7 @@
+function confirmDelete() {
+    return confirm('Are you sure you want to delete this?');
+}
+
 function comparePasswords() {
     let password1 = document.getElementById('password').value;
     let password2 = document.getElementById('confirm').value;

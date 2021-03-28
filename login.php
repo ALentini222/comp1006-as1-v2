@@ -6,38 +6,35 @@
 </head>
 <body>
 <header>
-    <?php
-    include 'global-nav.php';
-    ?>
+<?php
+include 'global-nav.php';
+?>
 </header>
-<main>
+<main class="container">
     <h1>Login</h1>
     <?php
     if (!empty($_GET['invalid'])) {
-        echo '<div>Invalid Login</div>';
+        echo '<div class="alert alert-danger">Invalid Login</div>';
     }
     else {
-        echo '<div>Please enter your username and password</div>';
+        echo '<div class="alert alert-info">Please enter your credentials</div>';
     }
     ?>
     <form method="post" action="validate.php">
-        <fieldset>
-            <label for="username" class="survey-login">Username:</label>
-            <input name="username" id="username" required type="email" placeholder="login@takesurvey.com" />
+        <fieldset class="form-group">
+            <label for="username" class="col-2">Username:</label>
+            <input name="username" id="username" required type="email" placeholder="email@email.com" />
         </fieldset>
-        <fieldset>
-            <label for="password" class="survey-login">Password:</label>
+        <fieldset class="form-group">
+            <label for="password" class="col-2">Password:</label>
             <input type="password" name="password" id="password" required />
         </fieldset>
-        <div>
+        <div class="offset-3">
             <button class="btn btn-primary">Login</button>
         </div>
     </form>
-
 </main>
-<?php
-include 'footer-nav.php';
-?>
-</body>
-</html>
+
+<?php include 'footer-nav.php'; ?>
+
 
