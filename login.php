@@ -36,5 +36,6 @@ include 'global-nav.php';
 </main>
 
 <?php include 'footer-nav.php'; ?>
-
+</body>
+</html>
 
