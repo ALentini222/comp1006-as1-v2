@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Assignment 1 V2 | Register</title>
+    <title>Assignment 1 V2 | Error</title>
 </head>
 <body>
 <header>

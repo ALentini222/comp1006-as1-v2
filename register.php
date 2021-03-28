@@ -33,6 +33,7 @@ include 'global-nav.php';
             <button class="btn btn-primary">Register</button>
         </div>
     </form>
+    <p>already have an account click <a href="login.php">here</a>to sign in</p>
 </main>
 
 <?php include 'footer.php'; ?>

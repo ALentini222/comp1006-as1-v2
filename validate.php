@@ -6,6 +6,7 @@
 </head>
 <body>
 <?php
+try{
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -44,4 +45,8 @@ $user = $cmd->fetch();
             header('location:login.php?invalid=true');
         }
     }
+}
+catch (exception $e){
+    header('location:error.php');
+}
 ?>

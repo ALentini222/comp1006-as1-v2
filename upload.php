@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Assignment 1 V2 | Home</title>
+    <title>Assignment 1 V2 | Uploading...</title>
 
 </head>
 <body>
 <header>
     <?php
-    include 'global-nav.php';
+    include 'logged-in-nav.php';
     ?>
 </header>
 <main>
     <?php
+    try{
     //collect variables from user interface
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -37,6 +38,10 @@
 
     $cmd->execute();
     $db = null;
+    }
+    catch (exception $e){
+        header('location:error.php');
+    }
     ?>
     <!-- Insert thank you for taking survey and ass link to see results -->
     <h1>Thank you for taking the survey</h1>

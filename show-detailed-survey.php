@@ -11,7 +11,6 @@
             width: 100%;
         }
     </style>
-
 </head>
 <body>
 <header>
@@ -20,18 +19,20 @@
     ?>
 </header>
 <main>
+    <p>To take survey click <a href="take-survey.php">here</a></p>
 <?php
-//collect variables from user interface
-$user = 'Andreas1141007';
-$database = 'Andreas1141007';
-$password = 'Ye5OchoAsg';
-try {
-    $db = new PDO("mysql:host=172.31.22.43;dbname=$database", $user, $password);
-} catch (PDOException $e) {
-    echo "Error when connecting to database: " . $e->getMessage();
-    die();
-}
-    echo '<table><thread><th>Firstname</th><th>Lastname</th><th>Email</th><th>Colour</th></thread>';
+try{
+    //collect variables from user interface
+    $user = 'Andreas1141007';
+    $database = 'Andreas1141007';
+    $password = 'Ye5OchoAsg';
+    try {
+        $db = new PDO("mysql:host=172.31.22.43;dbname=$database", $user, $password);
+    } catch (PDOException $e) {
+        echo "Error when connecting to database: " . $e->getMessage();
+        die();
+    }
+
 
     $sql = "SELECT * FROM user_input";
     $cmd = $db->prepare($sql);
@@ -40,16 +41,32 @@ try {
     $cmd->execute();
     $item = $cmd->fetchAll();
 
+    echo '<table><thread><th>Firstname</th><th>Lastname</th><th>Email</th><th>Colour</th>';
+
+    if(!empty($_SESSION['username'])){
+        echo'<th>Actions</th>';
+    }
+    echo'</thread>';
+
     $sqlCount = "SELECT COUNT(*) FROM user_input";
     $res = $db->query($sqlCount);
     $count = $res->fetchColumn();
 
     for( $i=0; $i<$count;$i++){
         echo '<tr><td>' . $item[$i]['firstname'] . '</td><td>' . $item[$i]['lastname'] . '</td><td>' . $item[$i]['email'] . '</td><td>' . $item[$i]['color'] .'</td></tr>';
-
+        echo '<td><a href="take-survey.php?surveyId=' . $item[$i]['surveyId'] .
+            '" class="btn btn-secondary">Edit</a>&nbsp;
+                <a href="delete-survey-result.php?surveyId=' . $item[$i]['surveyId'] .
+            '" class="btn btn-danger" title="Delete"
+            onclick="return confirmDelete();">Delete</a></td>';
+        echo'</tr>';
     }
     echo '</table>';
     $db = null;
+}
+catch (exception $e){
+    header('location:error.php');
+}
 ?>
 </main>
 <?php

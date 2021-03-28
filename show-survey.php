@@ -19,7 +19,9 @@
     ?>
 </header>
 <main>
+    <p>to take the survey click <a href="login.php">here</a></p>
     <?php
+    try{
     $user = 'Andreas1141007';
     $database = 'Andreas1141007';
     $password = 'Ye5OchoAsg';
@@ -46,6 +48,10 @@
     }
     echo '</table>';
     $db = null;
+    }
+    catch (exception $e){
+        header('location:error.php');
+    }
     ?>
 </main>
 <?php

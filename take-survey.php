@@ -8,6 +8,14 @@
 <header>
     <?php
     include 'logged-in-nav.php';
+    include 'auth.php';
+
+    $surveyItem = null;
+    $surveyItem['firstname'] = null;
+    $surveyItem['lastname'] = null;
+    $surveyItem['email'] = null;
+    $surveyItem['colour'] = null;
+
     ?>
 </header>
 <main>
@@ -22,6 +30,7 @@
     <label for="colour">Favorite Colour of the Rainbow:</label><br>
     <select id="colour" name="colour">
         <?php
+        try{
         $db = new PDO('mysql:host=172.31.22.43;dbname=Andreas1141007', 'Andreas1141007', 'Ye5OchoAsg');
         $sql = "SELECT * FROM dropdown_list";
 
@@ -32,8 +41,13 @@
         foreach ($categories as $c) {
             echo '<option value="' . $c['tabledata_color'] . '">' . $c['tabledata_color'] . '</option>';
         }
+        }
+        catch (exception $e){
+            header('location:error.php');
+        }
         ?>
     </select><br><br>
+    <input type="hidden" name="surveyId" id="surveyId" value="<?php echo $surveyItem['surveyId']; ?>" />
     <input type="submit" value="Submit">
 </form>
 </main>

@@ -7,7 +7,7 @@
 <body>
 <?php
 include 'global-nav.php';
-
+try{
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confirm = $_POST['confirm'];
@@ -59,7 +59,10 @@ if ($ok) {
         }
         $db = null;
 }
-
+}
+catch (exception $e){
+    header('location:error.php');
+}
 include 'footer-nav.php';
 ?>
 </body>
