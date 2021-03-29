@@ -9,13 +9,6 @@
     <?php
     include 'logged-in-nav.php';
     include 'auth.php';
-
-    $surveyItem = null;
-    $surveyItem['firstname'] = null;
-    $surveyItem['lastname'] = null;
-    $surveyItem['email'] = null;
-    $surveyItem['colour'] = null;
-
     ?>
 </header>
 <main>
@@ -47,7 +40,6 @@
         }
         ?>
     </select><br><br>
-    <input type="hidden" name="surveyId" id="surveyId" value="<?php echo $surveyItem['surveyId']; ?>" />
     <input type="submit" value="Submit">
 </form>
 </main>

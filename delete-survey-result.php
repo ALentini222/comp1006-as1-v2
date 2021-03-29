@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Assignment 1 V2 | Login</title>
+    <title>Assignment 1 V2 | Delete</title>
 </head>
 <body>
 <header>

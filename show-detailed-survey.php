@@ -11,6 +11,7 @@
             width: 100%;
         }
     </style>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
 <header>
@@ -54,7 +55,7 @@ try{
 
     for( $i=0; $i<$count;$i++){
         echo '<tr><td>' . $item[$i]['firstname'] . '</td><td>' . $item[$i]['lastname'] . '</td><td>' . $item[$i]['email'] . '</td><td>' . $item[$i]['color'] .'</td></tr>';
-        echo '<td><a href="take-survey.php?surveyId=' . $item[$i]['surveyId'] .
+        echo '<td><a href="edit-survey.php?surveyId=' . $item[$i]['surveyId'] .
             '" class="btn btn-secondary">Edit</a>&nbsp;
                 <a href="delete-survey-result.php?surveyId=' . $item[$i]['surveyId'] .
             '" class="btn btn-danger" title="Delete"
@@ -62,6 +63,8 @@ try{
         echo'</tr>';
     }
     echo '</table>';
+    $surveyTableId = $item[$i]['surveyId'];
+    $_SESSION['surveyItemId'] = $surveyTableId;
     $db = null;
 }
 catch (exception $e){

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | Login</title>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
 <header>
@@ -27,7 +28,9 @@ include 'global-nav.php';
         </fieldset>
         <fieldset class="form-group">
             <label for="password" class="col-2">Password:</label>
-            <input type="password" name="password" id="password" required />
+            <input type="password" name="password" id="password" required
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   onkeyup="return comparePasswords();">
         </fieldset>
         <div class="offset-3">
             <button class="btn btn-primary">Login</button>
