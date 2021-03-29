@@ -9,17 +9,13 @@
 <?php
 include 'logged-in-nav.php';
 include 'auth.php';
-$surveyItemId = $_SESSION['surveyItemId'];
-$_SESSION['surveyItems'] = $surveyItemId;
+$surveyId = $_GET['surveyId'];
 $item = null;
 $item['firstname'] = null;
 $item['lastname'] = null;
 $item['email'] = null;
 $item['colour'] = null;
-$item['surveyId'] = null;
-if(!empty($_GET['surveyId'])) {
-    if (is_numeric($_GET['surveyId'])) {
-        $surveyId = $_GET['surveyId'];
+$item['surveyId'] = $surveyId;
         try {
             $user = 'Andreas1141007';
             $database = 'Andreas1141007';
@@ -36,14 +32,12 @@ if(!empty($_GET['surveyId'])) {
             $cmd->execute();
             $item = $cmd->fetch();
 
-            echo '<form action="edit-upload.php?surveyId="' . $surveyId  . 'method="post">';
         } catch (exception $e) {
             header('location:error.php');
-        }
-    }
 }
 
 ?>
+    <form action="edit-upload.php" method="post">
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname" required value="<?php echo $item['firstname'];?>"><br>
     <label for="lastname">Last name:</label><br>
@@ -62,13 +56,13 @@ if(!empty($_GET['surveyId'])) {
                 foreach ($categories as $c) {
                     echo '<option value="' . $c['tabledata_color'] . '">' . $c['tabledata_color'] . '</option>';
                 }
-
+                $db = null;
         } catch (exception $e) {
                 header('location:error.php');
         }
             ?>
         </select><br><br>
-        <input type="hidden" name="surveyId" id="surveyId" value="<?php echo $surveyItemId = $_SESSION['surveyItemId'];?>" />
+        <input type="hidden" name="surveyId" id="surveyId" value="<?php echo $item['surveyId'];?>" />
         <input type="submit" value="Submit">
     </form>
 </header>

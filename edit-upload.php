@@ -15,11 +15,12 @@
     <?php
             try {
                 //collect variables from user interface
-                $surveyItemId = $_SESSION['surveyItems'];
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname'];
                 $email = $_POST['email'];
                 $colour = $_POST['colour'];
+                $surveyId = $_POST['surveyId'];
+                echo $firstname,$lastname,$email,$colour,$surveyId;
                 $user = 'Andreas1141007';
                 $database = 'Andreas1141007';
                 $password = 'Ye5OchoAsg';
@@ -36,7 +37,7 @@
                 $cmd->bindParam(':lastname', $lastname, PDO::PARAM_STR, 100);
                 $cmd->bindParam(':email', $email, PDO::PARAM_STR, 100);
                 $cmd->bindParam(':colour', $colour, PDO::PARAM_STR, 100);
-                $cmd->bindParam(':surveyId', $surveyItemId, PDO::PARAM_STR, 100);
+                $cmd->bindParam(':surveyId', $surveyId, PDO::PARAM_STR, 100);
 
                 $cmd->execute();
                 $db = null;
