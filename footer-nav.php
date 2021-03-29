@@ -1,3 +1,3 @@
 <footer>
-    <small>Survey | COMP1006 Assignment 2</small>
+    <small>Favorite Colour Survey &copy; | COMP1006 Assignment 2</small>
 </footer>

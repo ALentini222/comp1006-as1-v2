@@ -12,7 +12,7 @@
 </header>
 
 <main>
-    <div>Page Not Found</div>
+    <h1>Page Not Found</h1>
     <p>The page you are looking for could not be found or does not exist.  Use provided links above or click <a href="index.php" title="Home">here</a> to go to the home page</p>
 </main>
 <?php include 'footer-nav.php'; ?>

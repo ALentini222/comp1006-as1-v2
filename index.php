@@ -13,7 +13,7 @@
 </header>
 <main>
     <h1>Welcome</h1>
-    <p>This page is an introduction page that will be changed later when this is getting changed</p>
+    <p>This survey is to see what peoples favorite colours are</p>
     <?php
     ?>
 </main>

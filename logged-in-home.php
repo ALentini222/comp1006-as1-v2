@@ -13,8 +13,7 @@
 </header>
 <main>
     <h1>Welcome</h1>
-    <?php
-    ?>
+    <p>feel free to take the survey <a href="take-survey.php" >here</a>  or view the previous results <a href="show-detailed-survey.php">here</a></p>
 </main>
     <?php
     include 'footer-nav.php';
