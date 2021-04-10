@@ -37,7 +37,7 @@ $item['surveyId'] = $surveyId;
 }
 
 ?>
-    <form action="edit-upload.php" method="post">
+    <form action="edit-upload.php?surveyId=<?php echo $item['surveyId'] ?>" method="post">
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname" required value="<?php echo $item['firstname'];?>"><br>
     <label for="lastname">Last name:</label><br>
@@ -62,7 +62,6 @@ $item['surveyId'] = $surveyId;
         }
             ?>
         </select><br><br>
-        <input type="hidden" name="surveyId" id="surveyId" value="<?php echo $item['surveyId'];?>" />
         <input type="submit" value="Submit">
     </form>
 </header>
