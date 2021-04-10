@@ -28,7 +28,7 @@
         echo "Error when connecting to database: " . $e->getMessage();
         die();
     }
-    $sql = "INSERT INTO user_input(firstname, lastname, email, color) VALUES (:firstname, :lastname, :email, :colour)";
+    $sql = "INSERT INTO survey_results(firstname, lastname, email, color) VALUES (:firstname, :lastname, :email, :colour)";
 
     $cmd = $db->prepare($sql);
     $cmd->bindParam(':firstname', $firstname, PDO::PARAM_STR, 100);

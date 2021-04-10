@@ -30,7 +30,7 @@
                     echo "Error when connecting to database: " . $e->getMessage();
                     die();
                 }
-                $sql = "UPDATE user_input SET firstname = :firstname, lastname = :lastname, email = :email, colour = :colour WHERE surveyId = :surveyId";
+                $sql = "UPDATE survey_results SET firstname = :firstname, lastname = :lastname, email = :email, colour = :colour WHERE surveyId = :surveyId";
 
                 $cmd = $db->prepare($sql);
                 $cmd->bindParam(':firstname', $firstname, PDO::PARAM_STR, 100);

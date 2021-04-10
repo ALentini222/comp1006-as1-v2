@@ -35,7 +35,7 @@ try{
     }
 
 
-    $sql = "SELECT * FROM user_input";
+    $sql = "SELECT * FROM survey_results";
     $cmd = $db->prepare($sql);
     $cmd->bindParam(':itemID', $itemId, PDO::PARAM_INT);
     $cmd = $db->prepare($sql);
@@ -49,7 +49,7 @@ try{
     }
     echo'</thread>';
 
-    $sqlCount = "SELECT COUNT(*) FROM user_input";
+    $sqlCount = "SELECT COUNT(*) FROM survey_results";
     $res = $db->query($sqlCount);
     $count = $res->fetchColumn();
 

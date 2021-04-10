@@ -25,7 +25,7 @@
                 die();
             }
             // set up & run the SQL DELETE command
-            $sql = "DELETE FROM user_input WHERE surveyId = :surveyId";
+            $sql = "DELETE FROM survey_results WHERE surveyId = :surveyId";
             $cmd = $db->prepare($sql);
             $cmd->bindParam(':surveyId', $surveyId, PDO::PARAM_INT);
             $cmd->execute();

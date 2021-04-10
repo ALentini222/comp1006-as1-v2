@@ -26,7 +26,7 @@ $item['surveyId'] = $surveyId;
                 echo "Error when connecting to database: " . $e->getMessage();
                 die();
             }
-            $sql = "SELECT * FROM items WHERE surveyId = :surveyId";
+            $sql = "SELECT * FROM survey_results WHERE surveyId = :surveyId";
             $cmd = $db->prepare($sql);
             $cmd->bindParam(':surveyId', $surveyId, PDO::PARAM_INT);
             $cmd->execute();
