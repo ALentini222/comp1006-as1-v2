@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
 <nav>
     <ul>
         <li><a href="index.php" title="Home">Home</a></li>

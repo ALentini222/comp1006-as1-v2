@@ -1,0 +1,9 @@
+html{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+table, td {
+    border: 1px solid black;
+}
+table {
+    width: 100%;
+}

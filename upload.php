@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | Uploading...</title>
-
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
 <header>
@@ -59,7 +59,6 @@
             }
         }
     }
-
     if($ok) {
         try {
             $user = 'Andreas1141007';

@@ -3,14 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Assignment 1 V2 | Show Survey</title>
-    <style>
-        table, td {
-            border: 1px solid black;
-        }
-        table {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="js/scripts.js"></script>
 </head>
 <body>
