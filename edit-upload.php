@@ -20,6 +20,7 @@
     $surveyId = $_GET['surveyId'];
     $photo = null;
     $ok = true;
+    echo $surveyId;
     if(empty(trim($firstname))){
         echo 'Name is required.<br />';
         $ok = false;
@@ -30,6 +31,9 @@
     }
     if(empty($email)){
         echo 'Email is required<br />';
+        $ok = false;
+    }
+    if(!is_numeric($surveyId)){
         $ok = false;
     }
     if(isset($_FILES['photo'])){
@@ -80,7 +84,7 @@
             $cmd->bindParam(':email', $email, PDO::PARAM_STR, 100);
             $cmd->bindParam(':colour', $colour, PDO::PARAM_STR, 100);
             $cmd->bindParam(':photo', $photoUniqueName, PDO::PARAM_STR, 100);
-            $cmd->bindParam(':surveyId', $surveyId, PDO::PARAM_STR, 100);
+            $cmd->bindParam(':surveyId', $surveyId, PDO::PARAM_INT);
 
             $cmd->execute();
             $db = null;
