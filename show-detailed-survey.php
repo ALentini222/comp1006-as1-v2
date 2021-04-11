@@ -35,7 +35,7 @@ try{
     $cmd->execute();
     $surveyResults = $cmd->fetchAll();
 
-    echo '<table><thread><th>Firstname</th><th>Lastname</th><th>Email</th><th>Colour</th>';
+    echo '<table><thread><th>Firstname</th><th>Lastname</th><th>Email</th><th>Colour</th><th>Image</th>';
 
     if(!empty($_SESSION['username'])){
         echo'<th>Actions</th>';
@@ -48,15 +48,18 @@ try{
 
     for( $i=0; $i<$count;$i++){
         echo '<tr><td>' . $surveyResults[$i]['firstname'] . '</td><td>' . $surveyResults[$i]['lastname'] . '</td><td>' . $surveyResults[$i]['email'] . '</td><td>' . $surveyResults[$i]['color'] .'</td></tr>';
+        if($surveyResults[$i]['photo'] == null){
+            echo'<td></td>';
+        }
+        else{
+            echo '<td><img src="img/'.$surveyResults[$i]['photo'] . '" alt="Item Photo" class="thumbnail offset-2" width="50" height="50"/></td>';
+
+        }
         echo '<td><a href="edit-survey.php?surveyId=' . $surveyResults[$i]['surveyId'] . '" class="btn btn-secondary">Edit</a>&nbsp;
                 <a href="delete-survey-result.php?surveyId=' . $surveyResults[$i]['surveyId'] . '" class="btn btn-danger" title="Delete"
             onclick="return confirmDelete();">Delete</a></td>';
-
-        echo '<td><img src="img/'.$surveyResults[$i]['photo'] . '" alt="Item Photo" class="thumbnail offset-2" width="50" height="50"/></td>';
         echo'</tr>';
     }
-
-
     echo '</table>';
     $surveyTableId = $surveyResults[$i]['surveyId'];
     $_SESSION['surveyItemId'] = $surveyTableId;

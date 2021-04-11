@@ -51,6 +51,7 @@
                     $photoDestination = 'img/' . $photoUniqueName;
                     if(move_uploaded_file($photoTempName, $photoDestination)){
                         echo "file successfully uploaded";
+                        $photoDestination = 'img/' . $photoUniqueName;
                     }
                     else{
                         echo"file failed to upload";
@@ -58,6 +59,9 @@
                 }
             }
         }
+    }
+    else{
+        $photoDestination = null;
     }
     if($ok) {
         try {
