@@ -1,9 +1,32 @@
 html{
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color:lightblue;
 }
-table, td {
-    border: 1px solid black;
+th{
+    border: 2px solid lightblue;
+    background-color:lightblue;
 }
-table {
-    width: 100%;
+table,td{
+    background-color:white;
+    border:none;
+}
+nav li{
+    float:right;
+    padding:15px;
+    display:inline;
+    background-color:lightblue;
+    font-size:24px;
+    text-decoration: none;
+}
+nav li a {
+    display: block;
+    text-decoration: none;
+}
+nav li a:hover {
+    background-color: white;
+}
+footer {
+    position:absolute;
+    bottom:0px;
+    width:100%;
 }

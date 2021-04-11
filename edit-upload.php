@@ -94,7 +94,7 @@
     }
     ?>
     <!-- Insert thank you for taking survey and ass link to see results -->
-    <h1>Thank you for taking the survey</h1>
+    <h1>Thank you for editing the survey</h1>
     <p>see the results <a href="show-detailed-survey.php" title="Show Survey">here</a></p>
 </main>
 <?php

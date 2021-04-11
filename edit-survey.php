@@ -69,5 +69,8 @@ $item['surveyId'] = $surveyId;
         <input type="submit" value="Submit">
     </form>
 </header>
+<?php
+include("footer-nav.php");
+?>
 </body>
 </html>

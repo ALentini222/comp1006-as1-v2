@@ -37,7 +37,7 @@ include 'global-nav.php';
     <p>already have an account click <a href="login.php">here</a>to sign in</p>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer-nav.php'; ?>
 
 
 </body>

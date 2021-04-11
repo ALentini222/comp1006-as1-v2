@@ -9,6 +9,7 @@
     <?php
     include 'logged-in-nav.php';
     include 'auth.php';
+    $surveyId = null;
     try{
 
 
@@ -42,8 +43,13 @@
         header('location:error.php');
     }
     header('location:show-detailed-survey.php');
-    ?>
-</header>
-<main>
 
-</main>
+echo '</header>';
+echo '<main>';
+echo '<h1>Deleting Item at position'. $surveyId .'</h1>';
+echo '</main>';
+
+include("footer-nav.php");
+?>
+</body>
+</html>

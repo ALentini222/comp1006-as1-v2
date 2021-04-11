@@ -13,7 +13,7 @@
     ?>
 </header>
 <main>
-<h2>Basic Information Survey</h2>
+    <h1>Take Survey</h1>
 <form action="upload.php" method="post" enctype="multipart/form-data">
     <label for="firstname">First name:</label><br>
     <input type="text" id="firstname" name="firstname" required><br>

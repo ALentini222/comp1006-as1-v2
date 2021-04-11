@@ -12,6 +12,7 @@
     ?>
 </header>
 <main>
+    <h1>Show Survey</h1>
     <p>to take the survey click <a href="login.php">here</a></p>
     <?php
     try{

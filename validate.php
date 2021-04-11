@@ -50,4 +50,7 @@ $user = $cmd->fetch();
 catch (exception $e){
     header('location:error.php');
 }
+include("footer-nav.php")
 ?>
+</body>
+</html>

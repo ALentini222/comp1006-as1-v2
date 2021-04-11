@@ -13,6 +13,7 @@
     ?>
 </header>
 <main>
+    <h1>Take Survey</h1>
     <p>To take survey click <a href="take-survey.php">here</a></p>
 <?php
 try{
@@ -47,7 +48,7 @@ try{
     $count = $res->fetchColumn();
 
     for( $i=0; $i<$count;$i++){
-        echo '<tr><td>' . $surveyResults[$i]['firstname'] . '</td><td>' . $surveyResults[$i]['lastname'] . '</td><td>' . $surveyResults[$i]['email'] . '</td><td>' . $surveyResults[$i]['color'] .'</td></tr>';
+        echo '<tr><td>' . $surveyResults[$i]['firstname'] . '</td><td>' . $surveyResults[$i]['lastname'] . '</td><td>' . $surveyResults[$i]['email'] . '</td><td>' . $surveyResults[$i]['color'] .'</td>';
         if($surveyResults[$i]['photo'] == null){
             echo'<td></td>';
         }

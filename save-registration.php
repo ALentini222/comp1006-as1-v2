@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
+<h1>Saving Registration</h1>
 <?php
 include 'global-nav.php';
 try{
