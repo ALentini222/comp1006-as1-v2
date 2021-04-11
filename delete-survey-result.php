@@ -41,6 +41,7 @@
     catch (exception $e){
         header('location:error.php');
     }
+    header('location:logged-in-home.php');
     ?>
 </header>
 <main>

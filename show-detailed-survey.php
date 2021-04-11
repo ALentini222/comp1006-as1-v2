@@ -40,7 +40,7 @@ try{
     $cmd->bindParam(':itemID', $itemId, PDO::PARAM_INT);
     $cmd = $db->prepare($sql);
     $cmd->execute();
-    $item = $cmd->fetchAll();
+    $surveyResults = $cmd->fetchAll();
 
     echo '<table><thread><th>Firstname</th><th>Lastname</th><th>Email</th><th>Colour</th>';
 
@@ -54,14 +54,18 @@ try{
     $count = $res->fetchColumn();
 
     for( $i=0; $i<$count;$i++){
-        echo '<tr><td>' . $item[$i]['firstname'] . '</td><td>' . $item[$i]['lastname'] . '</td><td>' . $item[$i]['email'] . '</td><td>' . $item[$i]['color'] .'</td></tr>';
-        echo '<td><a href="edit-survey.php?surveyId=' . $item[$i]['surveyId'] . '" class="btn btn-secondary">Edit</a>&nbsp;
-                <a href="delete-survey-result.php?surveyId=' . $item[$i]['surveyId'] . '" class="btn btn-danger" title="Delete"
+        echo '<tr><td>' . $surveyResults[$i]['firstname'] . '</td><td>' . $surveyResults[$i]['lastname'] . '</td><td>' . $surveyResults[$i]['email'] . '</td><td>' . $surveyResults[$i]['color'] .'</td></tr>';
+        echo '<td><a href="edit-survey.php?surveyId=' . $surveyResults[$i]['surveyId'] . '" class="btn btn-secondary">Edit</a>&nbsp;
+                <a href="delete-survey-result.php?surveyId=' . $surveyResults[$i]['surveyId'] . '" class="btn btn-danger" title="Delete"
             onclick="return confirmDelete();">Delete</a></td>';
+
+        echo '<td><img src="img/'.$surveyResults[$i]['photo'] . '" alt="Item Photo" class="thumbnail offset-2" width="50" height="50"/></td>';
         echo'</tr>';
     }
+
+
     echo '</table>';
-    $surveyTableId = $item[$i]['surveyId'];
+    $surveyTableId = $surveyResults[$i]['surveyId'];
     $_SESSION['surveyItemId'] = $surveyTableId;
     $db = null;
 }

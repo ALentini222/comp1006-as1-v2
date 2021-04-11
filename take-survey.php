@@ -13,15 +13,15 @@
 </header>
 <main>
 <h2>Basic Information Survey</h2>
-<form action="upload.php" method="post">
+<form action="upload.php" method="post" enctype="multipart/form-data">
     <label for="firstname">First name:</label><br>
-    <input type="text" id="firstname" name="firstname"><br>
+    <input type="text" id="firstname" name="firstname" required><br>
     <label for="lastname">Last name:</label><br>
-    <input type="text" id="lastname" name="lastname"><br><br>
+    <input type="text" id="lastname" name="lastname" required><br><br>
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
+    <input type="email" id="email" name="email" required><br>
     <label for="colour">Favorite Colour of the Rainbow:</label><br>
-    <select id="colour" name="colour">
+    <select id="colour" name="colour" required>
         <?php
         try{
         $db = new PDO('mysql:host=172.31.22.43;dbname=Andreas1141007', 'Andreas1141007', 'Ye5OchoAsg');
@@ -39,8 +39,10 @@
             header('location:error.php');
         }
         ?>
-    </select><br><br>
-    <input type="submit" value="Submit">
+    </select><br>
+    <label for="photo">Image Upload:</label>
+    <input type="file" name="photo" id="photo" accept=".jpg,.png,.jpeg" /><br>
+    <input type="submit" name="submit" value="Submit">
 </form>
 </main>
 <?php

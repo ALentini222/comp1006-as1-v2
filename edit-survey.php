@@ -62,6 +62,9 @@ $item['surveyId'] = $surveyId;
         }
             ?>
         </select><br><br>
+        <label for="photo">Image Upload:</label>
+        <input type="file" name="photo" id="photo" accept=".jpg,.png,.jpeg" /><br>
+        <input type="submit" name="submit" value="Submit">
         <input type="submit" value="Submit">
     </form>
 </header>
